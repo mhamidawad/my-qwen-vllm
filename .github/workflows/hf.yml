@@ -11,5 +11,5 @@ jobs:
       - uses: huggingface/hub-sync@v0.3.0
         with:
           github_repo_id: ${{ github.repository }}
-          huggingface_repo_id: username/repo-name
+          huggingface_repo_id: moehamid/qwen-moe-coder
           hf_token: ${{ secrets.HF_TOKEN }}
