@@ -1,16 +1,15 @@
-name: Sync to Hugging Face Hub
+name: Sync GitHub to Hugging Face Hub
 on:
   push:
-    branches: [main]  # Trigger on pushes to the main branch
+    branches: [main]
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: huggingface/hub-sync@v0.1.0
+      - uses: huggingface/hub-sync@v0.3.0
         with:
-          github_repo_id: ${{ github.repository }}  # Your GitHub repo (e.g., "your-username/your-repo")
-          huggingface_repo_id: "moehamid/qwen-moe-coder"  # Your HF repo (format: "username/model-name")
+          github_repo_id: ${{ github.repository }}
+          huggingface_repo_id: moehamid/qwen-moe-coder
           hf_token: ${{ secrets.HF_TOKEN }}
-          repo_type: model  # Specify "model" for models
